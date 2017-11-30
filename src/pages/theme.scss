@@ -1,5 +1,6 @@
 // Import Bulma's initial variables
-//@import "bulma/sass/utilities/_all.sass";
+
+@import "~bulma/sass/utilities/_all";
 //
 //// Override initial variables here
 //// You can add new ones or update existing ones:
@@ -17,8 +18,15 @@
 //
 //@import "bulma/bulma";
 
-$family-serif: 'Garamond';
-$family-primary: $family-serif;
+$family-sans-serif: 'Montserrat', 'Helvetica', sans-serif;
+
+$green: #778B40;
+$blue: #AEC2C9;
+
+$link: $green;
+$link-invert: $green-invert;
+//$family-serif: 'Lora', 'Garamond', serif;
+//$family-primary: $family-serif;
 
 
 @import "~bulma/bulma";

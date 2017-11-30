@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import g from "glamorous"
 import Link from "gatsby-link"
 import "./theme.scss"
-import { Box, Tile, Title } from 'bloomer';
+import { Column, Columns, Content, Notification, Title } from 'bloomer';
 
 export default ({ data }) => {
     return (
@@ -12,42 +12,25 @@ export default ({ data }) => {
             <g.H1 display={"inline-block"} borderBottom={"1px solid"}>
                 Amazing Pandas Eating Things
             </g.H1>
-            <h4>
+            <Title>
                 {data.allMarkdownRemark.totalCount} Posts
-            </h4>
-            <Tile isAncestor>
-                <Tile isSize={4} isVertical isParent>
-                    <Tile isChild render={
-                        props => (
-                            <Box {...props}>
-                                <Title>One</Title>
-                                <p>...</p>
-                            </Box>
-                        )
-                    } />
-                    <Tile isChild render={
-                        props => (
-                            <Box {...props}>
-                                <Title>Two</Title>
-                                <p>...</p>
-                            </Box>
-                        )
-                    } />
-                </Tile>
-                <Tile isParent>
-                    <Tile isChild render={
-                        props => (
-                            <Box {...props}>
-                                <Title>Three</Title>
-                                <p>...</p>
-                                <p>...</p>
-                            </Box>
-                        )
-                    } />
-                </Tile>
-            </Tile>
+            </Title>
+            <Columns isCentered>
+                <Column isSize='1/3'>
+                    <Notification isColor='success' hasTextAlign='centered'> isOneThird </Notification>
+                </Column>
+                <Column isSize={{mobile: 8}}>
+                    <Notification isColor='warning' hasTextAlign='centered' isSize={{mobile: 8}}> Mobile: 8  </Notification>
+                </Column>
+                <Column>
+                    <Notification isColor='danger' hasTextAlign='centered'> Third column </Notification>
+                </Column>
+                <Column>
+                    <Notification isColor='primary' hasTextAlign='centered'> Fourth column </Notification>
+                </Column>
+            </Columns>
             {data.allMarkdownRemark.edges.map(({ node }) =>
-                <div key={node.id}>
+                <Content key={node.id}>
                     <Link
                         to={node.fields.slug}
                         css={{ textDecoration: `none`, color: `inherit` }}
@@ -60,7 +43,7 @@ export default ({ data }) => {
                             {node.excerpt}
                         </p>
                     </Link>
-                </div>
+                </Content>
             )}
         </div>
     )

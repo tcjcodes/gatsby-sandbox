@@ -14,5 +14,15 @@ module.exports = {
         `gatsby-plugin-sass`,
         `gatsby-plugin-glamor`,
         'gatsby-plugin-react-helmet',
+        {
+            resolve: `gatsby-plugin-google-fonts`,
+            options: {
+                fonts: [
+                    `meddon`,
+                    `montserrat:300`,
+                    `lora:400,700`,
+                ]
+            }
+        },
     ],
 }
