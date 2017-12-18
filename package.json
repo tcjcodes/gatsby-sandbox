@@ -19,6 +19,8 @@
     "gatsby-source-filesystem": "^1.5.6",
     "gatsby-transformer-remark": "^1.7.19",
     "glamorous": "^4.11.0",
+    "react-dotdotdot": "^1.1.0",
+    "react-google-maps": "^9.4.2",
     "react-helmet": "^5.2.0",
     "typography-theme-kirkham": "^0.16.3"
   }

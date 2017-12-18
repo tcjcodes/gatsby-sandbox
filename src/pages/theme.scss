@@ -1,5 +1,4 @@
 // Import Bulma's initial variables
-
 @import "~bulma/sass/utilities/_all";
 //
 //// Override initial variables here
@@ -28,5 +27,15 @@ $link-invert: $green-invert;
 //$family-serif: 'Lora', 'Garamond', serif;
 //$family-primary: $family-serif;
 
-
 @import "~bulma/bulma";
+
+.card {
+  transition: transform 100ms ease-out;
+  transform: scale(1);
+
+  &:hover {
+    box-shadow: 0 0 15px #eee;
+    transition: transform 100ms ease-in;
+    transform: scale(1.1)
+  }
+}

@@ -8,7 +8,6 @@ const linkStyle = css({ float: `right` })
 export default ({ children, data }) =>
     <g.Div
         margin={`0 auto`}
-        maxWidth={700}
         padding='2em'
         paddingTop='1.5em'
     >
