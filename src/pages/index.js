@@ -10,13 +10,13 @@ import "./theme.css"
 
 export default ({data}) => {
     return (
-        <div className='container grid-md'>
+        <div className='p-2'>
             <Helmet title={data.site.siteMetadata.siteTitle}/>
             <div className="">
                 <div className="">
-                    <g.H1 display={"inline-block"} borderBottom={"1px solid"}>
+                    <g.P display={"inline-block"} borderBottom={"1px solid"}>
                         Amazing Pandas Eating Things
-                    </g.H1>
+                    </g.P>
                     <g.H2>
                         {data.allMarkdownRemark.totalCount} Posts
                     </g.H2>
