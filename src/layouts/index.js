@@ -53,7 +53,11 @@ export default ({children, data}) =>
                     <i className="icon icon-menu"/>
                 </Link>
 
-                <div id="sidebar-id" className="off-canvas-sidebar" css={{width: '15rem', padding: '1.25rem',}}>
+                <div id="sidebar-id" className="off-canvas-sidebar"
+                     css={{backgroundColor: themeData.colors.white,
+                         minHeight: '100vh', width: '15rem', padding: '1.25rem',
+                         borderRight: `1px solid ${themeData.colors.gray}`
+                     }}>
                     <div className="p-2 my-2">
                         <Link className={`d-block`} to={`/`}>
                             <div className="h4 pl-2">OFTEN
@@ -97,7 +101,7 @@ export default ({children, data}) =>
                             <div className="tile my-2">
                                 <div className="tile-icon">
                                     <figure className="avatar avatar-md" data-initial="RP"
-                                            css={{backgroundColor: '#5755d9'}}>
+                                            css={{backgroundColor: themeData.colors.primary}}>
                                     </figure>
                                 </div>
                                 <div className="tile-content text-ellipsis">
@@ -119,7 +123,7 @@ export default ({children, data}) =>
                                     <small className="d-block tile-subtitle text-muted ">Updated ft artist image_w with
                                         file
                                     </small>
-                                    <small className="text-muted text-gray">4:58 PM</small>
+                                    <small className="text-muted text-gray">3:58 PM</small>
                                 </div>
                             </div>
                         </div>
@@ -128,37 +132,8 @@ export default ({children, data}) =>
 
                 <Link className="off-canvas-overlay" to="#close"/>
 
-                <div className="off-canvas-content bg-gray" css={{padding: 0, }}>
-
-                    {/*<Link to={`/about/`}>
-                    About
-                </Link>*/}
-                    <div className="container grid-lg pb-2">
-                        <header className="navbar mb-2 px-2" css={{ marginTop: '2em', }}>
-                            <section className="navbar-section pt-2">
-                                <span className="h4 mr-2">Artists</span>
-                                <ul className="tab ml-2" css={{ border: 0, }}>
-                                    {['All', 'Favorites', 'Filtered'].map(
-                                        (val, index) => <li key={index}
-                                                            className={`${index == 0 && 'active'} tab-item mx-1`}>
-                                            <Link to='#'>
-                                                {val}
-                                            </Link>
-                                        </li>)}
-                                </ul>
-                            </section>
-                            <section className="navbar-section">
-                                <button className="mr-2 btn btn-primary">Add Artist</button>
-                                <button className="btn">Search</button>
-                            </section>
-                        </header>
-                    </div>
-
-                    <div css={{background: themeData.colors.white, minHeight: '100vh', }}>
-                        <div className="container grid-lg p-2">
-                            {children()}
-                        </div>
-                    </div>
+                <div className="off-canvas-content" css={{padding: 0,}}>
+                    {children()}
                 </div>
             </div>
         </g.Div>

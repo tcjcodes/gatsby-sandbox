@@ -8,5 +8,6 @@ export const themeData = {
         secondary: '#e5e5f9',
         gray: '#acb3c2',
         white: '#fff',
+        light: '#f8f9fa',
     },
 };
