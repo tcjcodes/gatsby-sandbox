@@ -2,11 +2,6 @@ import React from "react"
 import Helmet from 'react-helmet'
 import g from "glamorous"
 import Link from "gatsby-link"
-import "spectre.css/dist/spectre.min.css";
-import "spectre.css/dist/spectre-icons.min.css";
-import "spectre.css/dist/spectre-exp.min.css";
-// import "spectre.css/dist/spectre-icons.min.css";
-import "./theme.css"
 
 export default ({data}) => {
     return (
