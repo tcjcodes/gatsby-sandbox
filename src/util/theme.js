@@ -9,5 +9,6 @@ export const themeData = {
         gray: '#acb3c2',
         white: '#fff',
         light: '#f8f9fa',
+        grayLight: '#CACED8', // ???
     },
 };

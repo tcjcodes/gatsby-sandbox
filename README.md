@@ -1,2 +1,2 @@
 # gatsby-sandbox
-from gatsby tutorial pt 4
+building with spectre

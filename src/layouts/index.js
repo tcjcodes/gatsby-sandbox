@@ -1,10 +1,9 @@
 import React from "react"
 import "../util/glamor-plugins";
 import {themeData} from "../util/theme.js";
-
 import g, {ThemeProvider} from "glamorous"
-
 import Link from "gatsby-link"
+import SidebarSection from "../components/sidebar-section";
 
 const StyledAccordion = () => <details className="accordion" open>
     <summary className="accordion-header">
@@ -24,26 +23,6 @@ const StyledAccordion = () => <details className="accordion" open>
     </div>
 </details>;
 
-const SidebarSection = ({heading, iconButton, children}) => (
-    <div css={{margin: '1.25rem 0'}}>
-        <div className="px-2 mx-2">
-            {iconButton && <div className="clearfix text-gray">
-                <span className="float-left text-bold text-uppercase h6">
-                    {heading}
-                </span>
-                <button css={{borderColor: themeData.colors.gray}}
-                        className="btn bg-gray text-gray btn-block btn-sm btn-action circle float-right">
-                    <i className={`icon icon-${iconButton}`}/></button>
-            </div>}
-            {!iconButton && <div className="mt-2 text-bold text-uppercase text-gray">{heading}</div>}
-            <div className="divider"/>
-        </div>
-        <div className='mb-2'>
-            {children}
-        </div>
-    </div>
-)
-
 export default ({children, data}) =>
     <ThemeProvider theme={themeData}>
         <g.Div id='root'>
@@ -54,7 +33,8 @@ export default ({children, data}) =>
                 </Link>
 
                 <div id="sidebar-id" className="off-canvas-sidebar"
-                     css={{backgroundColor: themeData.colors.white,
+                     css={{
+                         backgroundColor: themeData.colors.white,
                          minHeight: '100vh', width: '15rem', padding: '1.25rem',
                          borderRight: `1px solid ${themeData.colors.gray}`
                      }}>
