@@ -2,6 +2,7 @@ import React from "react"
 import Link from "gatsby-link"
 import {themeData} from "../util/theme";
 import Subheading from "../components/subheading";
+import glamorous from "glamorous";
 
 const PageHeading = ({title, navLink, navText}) => (<header className="navbar"
                                                             css={{marginBottom: '1.25em',}}>
@@ -20,6 +21,14 @@ const PageHeading = ({title, navLink, navText}) => (<header className="navbar"
         </div>
     </section>
 </header>)
+
+const PageSection = glamorous.section({
+    marginTop: '1rem',
+    marginBottom: '2rem',
+});
+
+const TableHeaderCell = ({ name }) => (<th css={{ fontWeight: 'normal', paddingLeft: 0, }}><Subheading>{name}</Subheading></th>)
+const TableCell = ({ children }) => (<td css={{ paddingLeft: 0, }}>{children}</td>)
 
 export default ({data}) => {
     return (
@@ -50,8 +59,8 @@ export default ({data}) => {
             </div>
             <div css={{background: themeData.colors.light, minHeight: '100vh',}}>
                 <div className="container grid-xl p-2">
-                    <div id='myContent' css={{marginTop: '1rem',}} className='p-2'>
-                        <section className='pb-2'>
+                    <div id='myContent' className='p-2'>
+                        <PageSection>
                             <PageHeading title='Favorites' navLink='#' navText='Edit'/>
                             <div className="columns">
                                 {['Kanye West', 'SZA', 'Beyonce', 'Solange Knowles', 'Jay-Z',].map((artist, index) =>
@@ -70,9 +79,9 @@ export default ({data}) => {
                                         </div>
                                     </div>)}
                             </div>
-                        </section>
+                        </PageSection>
 
-                        <section className='pb-2' css={{ marginTop: '2.5rem', }}>
+                        <PageSection>
                             <PageHeading title='Filtered' navLink='#' navText='Edit'/>
                             <div className="columns">
                                 {['Rihanna', 'SZA', 'Post Malone', 'Beyonce', 'Idina Menzel',].map((artist, index) =>
@@ -91,7 +100,42 @@ export default ({data}) => {
                                         </div>
                                     </div>)}
                             </div>
-                        </section>
+                        </PageSection>
+
+                        <PageSection>
+                            <PageHeading title='All Artists' navLink='#' navText='Edit'/>
+
+                            <table className="table">
+                                <thead>
+                                <tr css={{ fontSize: '0.7rem', }}>
+                                    <TableHeaderCell name='artist Name'/>
+                                    <TableHeaderCell name='song count'/>
+                                    <TableHeaderCell name='genre'/>
+                                    <TableHeaderCell name='latest album'/>
+                                </tr>
+                                </thead>
+                                <tbody css={{ backgroundColor: themeData.colors.white }}>
+                                <tr className="" >
+                                    <td>The Shawshank Redemption</td>
+                                    <TableCell>Crime, Drama</TableCell>
+                                    <TableCell>14 October 1994</TableCell>
+                                    <TableCell>lorem Ipsum dolores</TableCell>
+                                </tr>
+                                <tr className="" >
+                                    <td>The Shawshank Redemption</td>
+                                    <TableCell>Crime, Drama</TableCell>
+                                    <TableCell>14 October 1994</TableCell>
+                                    <TableCell>lorem Ipsum dolores</TableCell>
+                                </tr>
+                                <tr className="" >
+                                    <td>The Shawshank Redemption</td>
+                                    <TableCell>Crime, Drama</TableCell>
+                                    <TableCell>14 October 1994</TableCell>
+                                    <TableCell>lorem Ipsum dolores</TableCell>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </PageSection>
                     </div>
                 </div>
             </div>
