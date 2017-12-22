@@ -4,6 +4,9 @@ import {themeData} from "../util/theme";
 import Subheading from "../components/subheading";
 import glamorous from "glamorous";
 
+const artists = ['Kanye West', 'Jay-Z', 'Rich Chigga', 'Snoop Lion','Rihanna', 'SZA', 'Post Malone', 'Beyonce', 'Idina Menzel',
+'Ludacris', 'John Mayer', ];
+
 const PageHeading = ({title, navLink, navText}) => (<header className="navbar"
                                                             css={{marginBottom: '1.25em',}}>
     <section className="navbar-section">
@@ -63,7 +66,7 @@ export default ({data}) => {
                         <PageSection>
                             <PageHeading title='Favorites' navLink='#' navText='Edit'/>
                             <div className="columns">
-                                {['Kanye West', 'SZA', 'Beyonce', 'Solange Knowles', 'Jay-Z',].map((artist, index) =>
+                                {artists.slice(0, 5).map((artist, index) =>
                                     <div key={artist}
                                          className={`column col-2 ${index == 0 && 'col-mr-auto'} ${index > 0 && index < 4 && 'col-mx-auto'} ${index == 4 && 'col-ml-auto'}`}>
                                         <div className="card my-2">
@@ -84,7 +87,7 @@ export default ({data}) => {
                         <PageSection>
                             <PageHeading title='Filtered' navLink='#' navText='Edit'/>
                             <div className="columns">
-                                {['Rihanna', 'SZA', 'Post Malone', 'Beyonce', 'Idina Menzel',].map((artist, index) =>
+                                {artists.slice(5, 10).map((artist, index) =>
                                     <div key={artist}
                                          className={`column col-2 ${index == 0 && 'col-mr-auto'} ${index > 0 && index < 4 && 'col-mx-auto'} ${index == 4 && 'col-ml-auto'}`}>
                                         <div className="card my-2">
@@ -105,7 +108,7 @@ export default ({data}) => {
                         <PageSection>
                             <PageHeading title='All Artists' navLink='#' navText='Edit'/>
 
-                            <table className="table">
+                            <table className="table table-hover">
                                 <thead>
                                 <tr css={{ fontSize: '0.7rem', }}>
                                     <TableHeaderCell name='artist Name'/>
@@ -115,24 +118,22 @@ export default ({data}) => {
                                 </tr>
                                 </thead>
                                 <tbody css={{ backgroundColor: themeData.colors.white }}>
-                                <tr className="" >
-                                    <td>The Shawshank Redemption</td>
+                                {artists.map((name, index) => <tr key={index} className="c-hand" >
+                                    <td>
+                                        <div className="tile tile-centered">
+                                            <div className="tile-icon">
+                                                <figure className="avatar avatar-lg rounded" data-initial=""
+                                                        css={{ backgroundColor: themeData.colors.gray }} />
+                                            </div>
+                                            <div className="tile-content">
+                                                <div className="tile-title">{name}</div>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <TableCell>Crime, Drama</TableCell>
                                     <TableCell>14 October 1994</TableCell>
                                     <TableCell>lorem Ipsum dolores</TableCell>
-                                </tr>
-                                <tr className="" >
-                                    <td>The Shawshank Redemption</td>
-                                    <TableCell>Crime, Drama</TableCell>
-                                    <TableCell>14 October 1994</TableCell>
-                                    <TableCell>lorem Ipsum dolores</TableCell>
-                                </tr>
-                                <tr className="" >
-                                    <td>The Shawshank Redemption</td>
-                                    <TableCell>Crime, Drama</TableCell>
-                                    <TableCell>14 October 1994</TableCell>
-                                    <TableCell>lorem Ipsum dolores</TableCell>
-                                </tr>
+                                </tr>)}
                                 </tbody>
                             </table>
                         </PageSection>

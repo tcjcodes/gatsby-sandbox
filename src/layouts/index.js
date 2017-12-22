@@ -68,7 +68,7 @@ export default ({children, data}) =>
                                             css={{backgroundColor: '#5755d9'}}>
                                     </figure>
                                 </div>
-                                <div className="tile-content text-ellipsis">
+                                <div className="tile-content">
                                     <span className="d-block text-bold tile-title">Yuen Lou</span>
                                     <small className="d-block tile-subtitle text-muted ">Earth's Mightiest Heroes joined
                                         forces to take on
@@ -84,7 +84,7 @@ export default ({children, data}) =>
                                             css={{backgroundColor: themeData.colors.primary}}>
                                     </figure>
                                 </div>
-                                <div className="tile-content text-ellipsis">
+                                <div className="tile-content">
                                     <span className="d-block text-bold tile-title">Regy Perlera</span>
                                     <small className="d-block tile-subtitle text-muted ">Added "Small Paintbrush" to
                                         wishlist
@@ -98,7 +98,7 @@ export default ({children, data}) =>
                                             css={{backgroundColor: '#5755d9'}}>
                                     </figure>
                                 </div>
-                                <div className="tile-content text-ellipsis">
+                                <div className="tile-content">
                                     <span className="d-block text-bold tile-title">Luc Succes</span>
                                     <small className="d-block tile-subtitle text-muted ">Updated ft artist image_w with
                                         file
